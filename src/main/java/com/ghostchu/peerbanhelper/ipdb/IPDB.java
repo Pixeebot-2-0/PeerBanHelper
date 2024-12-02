@@ -330,7 +330,7 @@ public class IPDB implements AutoCloseable {
                     if (r.statusCode() == 200) {
                         if (mirror.supportXzip()) {
                             try {
-                                File tmp = File.createTempFile(databaseName, ".tmp");
+                                File tmp = Files.createTempFile(databaseName, ".tmp").toFile();
                                 try (XZCompressorInputStream gzipInputStream = new XZCompressorInputStream(new FileInputStream(r.body().toFile()));
                                      FileOutputStream fileOutputStream = new FileOutputStream(tmp)) {
                                     byte[] buffer = new byte[1024];
