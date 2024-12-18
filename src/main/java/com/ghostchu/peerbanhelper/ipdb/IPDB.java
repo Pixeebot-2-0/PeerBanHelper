@@ -216,7 +216,7 @@ public class IPDB implements AutoCloseable {
             countryData.setIso(country.getIsoCode());
             String countryRegionName = country.getName();
             // 对 TW,HK,MO 后处理，偷个懒
-            if (languageTag.getFirst().equals("zh-CN") && (country.getIsoCode().equals("TW") || country.getIsoCode().equals("HK") || country.getIsoCode().equalsIgnoreCase("MO"))) {
+            if ("zh-CN".equals(languageTag.getFirst()) && (country.getIsoCode().equals("TW") || country.getIsoCode().equals("HK") || country.getIsoCode().equalsIgnoreCase("MO"))) {
                 countryRegionName = "中国" + countryRegionName;
             }
             countryData.setName(countryRegionName);

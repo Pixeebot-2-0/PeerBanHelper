@@ -33,7 +33,7 @@ public class EcoMode {
         }
         try {
             String data = setEcoMode(enable);
-            return data.equals("SUCCESS");
+            return "SUCCESS".equals(data);
         } catch (Throwable e) {
             return false;
         }

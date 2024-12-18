@@ -57,7 +57,7 @@ public class RuleSubController extends AbstractFeatureModule {
 
     @Override
     public void onEnable() {
-        moduleManager.getModules().stream().filter(ele -> ele.getConfigName().equals("ip-address-blocker-rules")).findFirst().ifPresent(ele -> {
+        moduleManager.getModules().stream().filter(ele -> "ip-address-blocker-rules".equals(ele.getConfigName())).findFirst().ifPresent(ele -> {
             ipBlackRuleList = (IPBlackRuleList) ele;
             webContainer.javalin()
                     // 查询检查间隔
