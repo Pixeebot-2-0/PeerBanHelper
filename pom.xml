@@ -21,6 +21,7 @@
         <javafx.scope>provided</javafx.scope>
         <install4j.home>/opt/install4j</install4j.home>
         <ormlite.version>6.1</ormlite.version>
+        <versions.java-security-toolkit>1.2.1</versions.java-security-toolkit>
     </properties>
     <pluginRepositories>
         <pluginRepository>
@@ -490,7 +491,18 @@
             <artifactId>flatlaf-extras</artifactId>
             <version>3.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.pixee</groupId>
+            <artifactId>java-security-toolkit</artifactId>
+        </dependency>
     </dependencies>
-
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.pixee</groupId>
+                <artifactId>java-security-toolkit</artifactId>
+                <version>${versions.java-security-toolkit}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
